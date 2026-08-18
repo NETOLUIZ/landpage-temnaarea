@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #08090D;
+  --bg-secondary: #0D0E12;
+
+  --brand-yellow: #FFD700;   /* CTA, ação, venda, número importante */
+  --brand-yellow-soft: #FFE16D;
+  --brand-purple: #7A20B0;   /* tecnologia, recursos, módulos, premium */
+  --brand-magenta: #F000B8;  /* criatividade, destaque, gradiente */
+  --brand-blue: #00D2FF;     /* confiança, informação, gráfico */
+  --brand-green: #00FFAB;    /* sucesso, pagamento, estoque ok */
+  --fg-base: #FFFFFF;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-base);
+    color: var(--fg-base);
+    font-family: 'Hanken Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, var(--brand-yellow) 0%, var(--brand-magenta) 50%, var(--brand-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-glass {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .bg-glass {
+    background-color: rgba(13, 14, 18, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .bg-glass-header {
+    background-color: rgba(8, 9, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-reverse {
+    animation: none !important;
+  }
+}
