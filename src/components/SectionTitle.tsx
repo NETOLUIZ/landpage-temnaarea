@@ -54,7 +54,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         </Badge>
       )}
 
-      <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-white leading-tight sm:whitespace-nowrap">
+      <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-white leading-tight text-balance">
         {renderTitle()}
       </h2>
 
